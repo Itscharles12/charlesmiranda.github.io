@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profiles</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f2f5;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 280px;
+        }
+        /* Profile Picture Box */
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            background-color: #ddd;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem auto;
+            overflow: hidden;
+            border: 3px solid #eee;
+        }
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .link-card {
+            display: block;
+            text-decoration: none;
+            color: white;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .link-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .facebook { background-color: #1877F2; }
+        .github { background-color: #24292e; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="profile-pic">
+        <img src="it.jpg" alt="Profile Picture">
+    </div>
+
+    <h3 style="margin-bottom: 1.5rem; color: #333;">@Charles Kingsley Miranda</h3>
+    
+    <a href="https://web.facebook.com/charles.miranda.6969" class="link-card facebook" target="_blank">Facebook</a>
+    <a href="https://github.com/Itscharles12" class="link-card github" target="_blank">GitHub</a>
+</div>
+
+</body>
+</html>
