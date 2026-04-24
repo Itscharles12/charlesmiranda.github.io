@@ -9,78 +9,90 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </head>
 <style>
-	.sub-menu {
-		border: 1px solid white;
-		border-collapse: collapse;
-		width: 100vw;
-		table-layout: fixed;
-		height: 10vh;
-		background-color: rgba(220, 170, 222, 0.5);
-		position: fixed;
-		top: 10vh;
-		margin: 0;
-		padding: 0;
-		text-align: center;
-		z-index: 999;
-	}
-	.table-row td {
-		border: 1px solid white;
-		top: 10vh;
+    /* 1. RESET & BASE STYLES */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: sans-serif; overflow-x: hidden; }
 
-	}
-	.sections div {
-		min-height: 80vh;
-	}
-			.sections div:nth-child(1){
-			background-color: darkcyan;
-		}
-				.sections div:nth-child(2){
-			background-color: darkgrey;
-		}
-				.sections div:nth-child(3){
-			background-color: green;
-		}
-				.sections div:nth-child(4){
-			background-color: darksalmon;
-		}
-	.about {
-		display: flex;
-		justify-content: space-between;
-		padding: 60px 10%;
-		gap: 20%;
-	}
-	.about-text {
-		flex: 1;
-	}
-		.about-image {
-		flex: 1;
-	}
-	.about-image img {
-		height: 75%;
-		border-radius: 25%;
-		box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-	}
-	.sections {
-		margin-top: 20vh;
-	}
-	#latest, #birth, #educ, #skills {
-	scroll-margin-top: 20vh;
-	}
-	@media (max-width: 600px) {
-		.about {
-			flex-direction: column;
-			text-align: center;
-		}
-	}
-	#educ img{
-		height: 100%;
-		max-width: 80vh;
-		border-radius: 0;
-	}
-	.d-block w-100 {
-		height: 30%;
-	}
+    /* 2. NAVIGATION (Desktop First) */
+    header {
+        height: 10vh;
+        background: #333;
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+    .main-nav {
+        display: flex;
+        list-style: none;
+        width: 100%;
+        justify-content: space-around;
+    }
+    .main-nav a { color: white; text-decoration: none; font-size: 14px; }
+
+    /* 3. SUB-MENU (The 4 links) */
+    .sub-menu {
+        width: 100%;
+        background-color: rgba(220, 170, 222, 0.9);
+        position: fixed;
+        top: 10vh;
+        z-index: 999;
+        border-collapse: collapse;
+    }
+    .sub-menu td {
+        border: 1px solid white;
+        text-align: center;
+        padding: 10px;
+    }
+    .sub-menu a { text-decoration: none; color: black; font-weight: bold; }
+
+    /* 4. SECTIONS LAYOUT */
+    .sections { margin-top: 20vh; }
+    
+    .about {
+        display: flex;
+        padding: 60px 10%;
+        align-items: center;
+        min-height: 80vh;
+    }
+    .about-text { flex: 1; padding: 20px; }
+    .me { width: 100%; max-width: 300px; border-radius: 50%; }
+
+    /* COLOR BLOCKS */
+    #latest { background-color: darkcyan; color: white; }
+    #birth { background-color: darkgrey; padding: 50px 20px; }
+    #educ { background-color: green; color: white; padding: 50px 20px; }
+    #skills { background-color: darksalmon; min-height: 40vh; display: flex; align-items: center; justify-content: center; }
+
+    /* 5. RESPONSIVE FIXES (MOBILE VIEW) */
+    @media (max-width: 768px) {
+        /* Stack the About Section */
+        .about {
+            flex-direction: column;
+            text-align: center;
+            padding: 40px 5%;
+        }
+
+        /* Make the Sub-Menu text smaller so it fits */
+        .sub-menu a { font-size: 11px; }
+        
+        /* Fix the Carousel/Images for small screens */
+        #educ img {
+            width: 100% !important;
+            height: auto !important;
+        }
+
+        h1 { font-size: 1.5rem; }
+    }
+
+    /* CALENDAR STYLES */
+    .calendar { width: 100%; max-width: 400px; margin: 0 auto; background: white; padding: 10px; border-radius: 8px; }
+    .calendar th, .calendar td { padding: 10px; text-align: center; border: 1px solid #ddd; }
+    .birthday { background-color: gold; font-weight: bold; }
 </style>
+
 <body>
 	<header>
 		<ul class="main-nav">
@@ -139,17 +151,17 @@
 		<div id="carouselExample" class="carousel slide">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <a href="elementary.html"><img src="elem-es1.png" alt="Elementary" style="height: 50vh; display: block; margin-left: auto; margin-right: auto; width: 80%;"></a>	
+      <a href="elementary.html"><img src="elem-es1.png" alt="Elementary" style="height: 20vh; display: block; margin-left: auto; margin-right: auto; width: 30%;"></a>	
       <h5>Sipa Elementary School</h5>
       <p>Sipa, Santa Marcela, Apayao</p>
     </div>
     <div class="carousel-item">
-      <a href="highschool.html"><img src="sinhs2.png" class="d-block w-100" alt="Highschool" style="height: 50vh; display: block; margin-left: auto; margin-right: auto; width: 80%;"></a>
+      <a href="highschool.html"><img src="sinhs2.png" class="d-block w-100" alt="Highschool" style="height: 20vh; display: block; margin-left: auto; margin-right: auto; width: 30%;"></a>
       <h5>Sipa Imelda National High School</h5>
       <p>Sipa, Santa Marcela, Apayao</p>
     </div>
     <div class="carousel-item">
-      <a href="college.html"><img src="asc.webp" class="d-block w-100" alt="College" style="height: 50vh; display: block; margin-left: auto; margin-right: auto; width: 80%;"></a>
+      <a href="college.html"><img src="asc.webp" class="d-block w-100" alt="College" style="height: 20vh; display: block; margin-left: auto; margin-right: auto; width: 30%;"></a>
       <h5>Apayao State College</h5>
       <p>San Isidro Sur, Luna, Apayao</p>
     </div>
